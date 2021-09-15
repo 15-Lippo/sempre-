@@ -1,0 +1,20 @@
+{
+  "name": "marebits-presale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Twifag",
+  "license": "SEE LICENSE IN https://donutsteel.pl",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^2.5.1",
+    "@truffle/hdwallet-provider": "^1.5.0",
+    "@umaprotocol/truffle-ledger-provider": "^1.0.5",
+    "ganache-cli": "^6.12.2",
+    "marebits": "github:marebits/marebits-ethereum",
+    "regenerator-runtime": "^0.13.9",
+    "truffle": "^5.4.10"
+  }
+}

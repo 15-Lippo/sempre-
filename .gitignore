@@ -1,0 +1,5 @@
+build/contracts/*
+contracts/.placeholder
+node_modules
+test/.placeholder
+secrets.json
