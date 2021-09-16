@@ -14,6 +14,7 @@
     "@umaprotocol/truffle-ledger-provider": "^1.0.5",
     "ganache-cli": "^6.12.2",
     "marebits": "github:marebits/marebits-ethereum",
+    "node-fetch": "^2.6.2",
     "regenerator-runtime": "^0.13.9",
     "truffle": "^5.4.10"
   }
