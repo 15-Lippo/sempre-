@@ -11,7 +11,7 @@ const saleCap = "3"; // max amount of ETH to be raised
 const saleRate = "65426600000"; // tokens per ETH
 const minPurchase = "1".padEnd(20 - saleRate.length, "0"); // minimum purchase amount, in wei
 const startTimeOffsetMinutes = 5; // minutes from beginning of deployment
-const endTimeOffsetMinutes = 60; // minutes from beginning of deployment
+const endTimeOffsetMinutes = 30; // minutes from beginning of deployment
 const etherScanGasOracleURL = new URL("https://api.etherscan.io/api?module=gastracker&action=gasoracle");
 const gasLimit = 100000;
 
