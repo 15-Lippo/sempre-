@@ -6,6 +6,7 @@ const URL = require("url").URL;
 const addresses = {
 	development: { ethWallet: "0x8145cb4a7d87020723b765b0985dae0569180700", tokenAddress: "0xae7F929A0aDaB593Ff7ffe7Db38Bf4ACf8FCeFcd" }, 
 	main: { ethWallet: "0x00Ad9AEb02CC7892c94DBd9E9BE93Ec5cf644632", tokenAddress: "0xc5a1973e1f736e2ad991573f3649f4f4a44c3028" }, 
+	ropsten: { ethWallet: "", tokenAddress: "" }
 };
 const saleCap = "3"; // max amount of ETH to be raised
 const saleRate = "65426600000"; // tokens per ETH
