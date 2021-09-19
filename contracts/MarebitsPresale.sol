@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
  * @title MarebitsPresale
- * @dev Timed, Capped, PostDelivery Crowdsale with a minimum purchase, too ^:)
+ * @dev Ownable, Timed, Capped, PostDelivery Crowdsale with a minimum purchase, too ^:)
  */
 contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
 	using SafeMath for uint256;
@@ -21,7 +21,7 @@ contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale,
 	event PresaleFinalized();
 
 	/**
-	 * @dev Constructor, takes minimum amount of wei accepted in the crowdsale.
+	 * @dev Constructor, takes minimum amount of wei accepted in the presale.
 	 * @param rate Amount of tokens purchased per ETH
 	 * @param minPurchase Minimum amount of wei to be contributed
 	 */
@@ -37,7 +37,7 @@ contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale,
 	function bestPony() public pure returns (string memory) { return "Twilight Sparkle is the cutest, smartest, all around best pony!"; }
 
 	/**
-	 * @dev Must be called after crowdsale ends, to do some extra finalization
+	 * @dev Must be called after presale ends, to do some extra finalization
 	 * work. Calls the contract's finalization function.
 	 */
 	function finalize() public onlyOwner {
@@ -55,7 +55,7 @@ contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale,
 	function isFinalized() public view returns (bool) { return _isFinalized; }
 
 	/**
-	 * @return the minimum purchase of the crowdsale.
+	 * @return the minimum purchase of the presale.
 	 */
 	function minPurchase() public view returns (uint256) { return _minPurchase; }
 
@@ -87,6 +87,7 @@ contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale,
 	 * @param weiAmount Amount of wei contributed
 	 */
 	function _preValidatePurchase(address beneficiary, uint256 weiAmount) internal view {
+		require(!_isFinalized, "MarebitsPresale: already finalized");
 		super._preValidatePurchase(beneficiary, weiAmount);
 		require(weiAmount >= _minPurchase, "MarebitsPresale: sale amount must be greater than or equal to minimum purchase");
 	}
