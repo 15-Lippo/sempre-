@@ -8,8 +8,8 @@ const addresses = {
 	main: { ethWallet: "0x00Ad9AEb02CC7892c94DBd9E9BE93Ec5cf644632", tokenAddress: "0xc5a1973e1f736e2ad991573f3649f4f4a44c3028" }, 
 	ropsten: { ethWallet: "", tokenAddress: "" }
 };
-const saleCap = "3"; // max amount of ETH to be raised
-const saleRate = "65426600000"; // tokens per ETH
+const saleCap = "2"; // max amount of ETH to be raised
+const saleRate = "60753271517"; // tokens per ETH
 const minPurchase = "1".padEnd(20 - saleRate.length, "0"); // minimum purchase amount, in wei
 const startTimeOffsetMinutes = 5; // minutes from beginning of deployment
 const endTimeOffsetMinutes = 30; // minutes from beginning of deployment
