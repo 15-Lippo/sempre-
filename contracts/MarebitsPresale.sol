@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/ownership/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
- * @title MarebitsPresale
+ * @title Lisprocoin Presale
  * @dev Ownable, Timed, Capped, PostDelivery Crowdsale with a minimum purchase, too ^:)
  */
 contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale, PostDeliveryCrowdsale {
@@ -22,7 +22,7 @@ contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale,
 
 	/**
 	 * @dev Constructor, takes minimum amount of wei accepted in the presale.
-	 * @param rate Amount of tokens purchased per ETH
+	 * @param rate Amount of tokens purchased per Matic
 	 * @param minPurchase Minimum amount of wei to be contributed
 	 */
 	constructor(uint256 rate, address payable wallet, IERC20 token, uint256 cap, uint256 openingTime, uint256 closingTime, uint256 minPurchase) 
@@ -77,7 +77,7 @@ contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale,
 	// function _deliverTokens(address beneficiary, uint256 tokenAmount) internal { token().transfer(beneficiary, tokenAmount); }
 
 	/**
-	 * @dev Determines how ETH is stored/forwarded on purchases.
+	 * @dev Determines how Matic is stored/forwarded on purchases.
 	 */
 	function _forwardFunds() internal { /* do nothing */ }
 
