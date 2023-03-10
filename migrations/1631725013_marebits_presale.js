@@ -1,11 +1,11 @@
-const MarebitsPresale = artifacts.require("MarebitsPresale");
+const LisprocoinPresale = artifacts.require("LisprocoinPresale");
 const Migrations = artifacts.require("Migrations");
 
 const self = this;
 const URL = require("url").URL;
 const addresses = {
-	development: { ethWallet: "0x8145cb4a7d87020723b765b0985dae0569180700", tokenAddress: "0xae7F929A0aDaB593Ff7ffe7Db38Bf4ACf8FCeFcd" }, 
-	main: { ethWallet: "0x00Ad9AEb02CC7892c94DBd9E9BE93Ec5cf644632", tokenAddress: "0xc5a1973e1f736e2ad991573f3649f4f4a44c3028" }, 
+	development: { maticWallet: "0xD0355200111C2B21AAbC1a31552eCCDc5d4E905d, tokenAddress: "0x70E546c7a2cA4495cFcbE263a3b6D5ce68B2204C" }, 
+	main: { maticWallet: "0x6e6B7af155865C5e641CC22ba9F2a5316A3e5777", tokenAddress: "0x65Abd48bC38DEA1938AE94428590d4da54f74Fbe" }, 
 	ropsten: { ethWallet: "", tokenAddress: "" }
 };
 const saleCap = "2"; // max amount of ETH to be raised
