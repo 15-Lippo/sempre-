@@ -41,8 +41,8 @@ contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale,
 	 * work. Calls the contract's finalization function.
 	 */
 	function finalize() public onlyOwner {
-		require(!_isFinalized, "MarebitsPresale: already finalized");
-		require(hasClosed(), "MarebitsPresale: not closed");
+		require(!_isFinalized, "LisprocoinPresale: already finalized");
+		require(hasClosed(), "LisprocoinPresale: not closed");
 		withdrawContractTokens(address(token()));
 		wallet().transfer(address(this).balance);
 		_isFinalized = true;
@@ -89,6 +89,6 @@ contract MarebitsPresale is Ownable, Crowdsale, CappedCrowdsale, TimedCrowdsale,
 	function _preValidatePurchase(address beneficiary, uint256 weiAmount) internal view {
 		require(!_isFinalized, "MarebitsPresale: already finalized");
 		super._preValidatePurchase(beneficiary, weiAmount);
-		require(weiAmount >= _minPurchase, "MarebitsPresale: sale amount must be greater than or equal to minimum purchase");
+		require(weiAmount >= _minPurchase, "LisprocoinPresale: sale amount must be greater than or equal to minimum purchase");
 	}
 }
